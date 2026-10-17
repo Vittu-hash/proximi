@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 22.12.0
           cache: npm
-      - run: docker compose up -d
+      - run: docker compose up -d --wait
       - run: npm ci
       - run: docker compose exec -T mongo mongosh --quiet --eval "rs.status().ok"
       - run: npm test
