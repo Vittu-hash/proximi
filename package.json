@@ -2,6 +2,7 @@
   "name": "proximi",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/api",
     "apps/web"
@@ -13,6 +14,14 @@
     "test": "npm run test --workspaces --if-present",
     "format": "npm run format --workspaces --if-present",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "apps/api/**/*.{ts,tsx}": [
+      "eslint --config apps/api/eslint.config.js --max-warnings=0"
+    ],
+    "apps/web/**/*.{ts,tsx}": [
+      "eslint --config apps/web/eslint.config.js --max-warnings=0"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
