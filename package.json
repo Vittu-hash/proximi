@@ -7,6 +7,9 @@
     "apps/api",
     "apps/web"
   ],
+  "engines": {
+    "node": "24.20.0"
+  },
   "scripts": {
     "dev": "npm run dev --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
